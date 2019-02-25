@@ -5,12 +5,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'index page test 1'
+    return 'index page test 11'
 
 
 @app.route('/about')
 def about():
-    return 'About page test 1'
+    return 'About page test 11'
 
 
 if __name__ == '__main__':
