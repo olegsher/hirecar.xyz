@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'index page'
+    return 'index page test'
 
 
 @app.route('/about')
