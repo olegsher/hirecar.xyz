@@ -1,0 +1,7 @@
+{% extends "ru_layout.html" %}
+
+{% block content %}
+ {% for x in pl %}
+        {{ pl[x].get("Car Group") }}
+ {% endfor %}
+{% endblock %}
