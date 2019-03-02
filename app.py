@@ -12,6 +12,8 @@ def inject_now():
 
 
 
+
+
 @app.route('/')
 @app.route('/ru/index')
 def index():
