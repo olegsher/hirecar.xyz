@@ -43,7 +43,9 @@
 
 
         {% block content %}{% endblock %}
-    © 2014-2019 Copyright Vastama ltd аренда автомобиля в Израиле.
+    <div class="container fa-copyright">
+        <p>Copyright © 2014 - {{ now.year }} Vastama ltd аренда автомобиля в Израиле.</p>
+    </div>
         <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
         <script src="{{url_for('static', filename='js/bootstrap.bundle.js')}}"></script>
         <script src="{{url_for('static', filename='js/vue.js')}}"></script>

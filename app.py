@@ -1,7 +1,16 @@
 from flask import Flask, session, g, render_template
+from datetime import datetime
 
 
 app = Flask(__name__)
+
+
+@app.context_processor
+def inject_now():
+    return {'now': datetime.utcnow()}
+
+
+
 
 @app.route('/')
 @app.route('/ru/index')
