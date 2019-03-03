@@ -21,7 +21,7 @@
                             <li><br>
                                 <img style="float:left" class="img-responsive" src="http://www.hirecar.xyz/static/img/{{ r_num }}.png" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }} или подобный в Израиле"  />
                                 <img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/star.png')}}" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле"  />
-                                    из xxx на {{ now.year }}
+                                    из xxx на {{ now.strftime("%A %d. %B %Y") }}
                             </li>
                             <li class="text-left">
                                 <hr />Форма обратной связи:
