@@ -2,6 +2,7 @@ from flask import Flask, session, g, render_template, json, request
 from jinja2 import Template
 from datetime import datetime
 import json
+import random
 
 
 app = Flask(__name__)
@@ -23,6 +24,11 @@ def pl():
 @app.context_processor
 def pl_size():
     return {'pl_size': len(albar_dict)}
+
+@app.context_processor
+def r_num():
+    return {'r_num': random.randint(4,5)}
+
 
 
 
