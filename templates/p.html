@@ -2,6 +2,22 @@
 
 {% block content %}
  {% for x in pl %}
-        {{ pl[x].get("Car Group") }}
+        {{ pl[0].get("Car Group") }}
  {% endfor %}
+
+    <table class="centered">
+        <tr>
+                <th>First name</th>
+                <th>Age</th>
+        </tr>
+    x = len(pl)
+        {% for k in range(0,pl_size)  %}
+                <tr>
+                        <td> "Car Group"</td>
+                    <td> {{ pl[k].get("Car Group")  }} </td>
+
+                </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}
