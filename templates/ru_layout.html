@@ -3,6 +3,8 @@
     <head>
         <title> {{ title }}</title>
         <meta name="description" content="{{ meta_description }}">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
         <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/bootstrap.css') }}">
         <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/bootstrap-grid.css') }}">
@@ -34,6 +36,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/ru/budget">Бюджетные</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/p">Prices test</a>
                 </li>
             </ul>
         </div>
