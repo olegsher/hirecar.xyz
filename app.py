@@ -1,8 +1,9 @@
-from flask import Flask, session, g, render_template, json, request
+from flask import Flask, session, g, render_template, json, request, flash
 from jinja2 import Template
 from datetime import datetime
-import json
-import random
+from flask_wtf import FlaskForm
+from wtforms import StringField
+from wtforms.validators import DataRequired
 
 
 app = Flask(__name__)
@@ -24,12 +25,6 @@ def pl():
 @app.context_processor
 def pl_size():
     return {'pl_size': len(albar_dict)}
-
-@app.context_processor
-def r_num():
-    return {'r_num': random.randint(4,5)}
-
-
 
 
 @app.route('/p')
@@ -77,6 +72,16 @@ def budget():
     title = "budget. Прокат аренда авто в Израиле +972-58-7710101"
     meta_description = "budget/ Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
     return render_template("budget.html", title=title, meta_description = meta_description)
+
+@app.route('/form')
+def form():
+    title = "form page. Прокат аренда авто в Израиле +972-58-7710101"
+    meta_description = "Form Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
+    form = FlaskForm(csrf_enabled=False)
+    return render_template("form.html", title=title, meta_description=meta_description)
+
+class MyForm(FlaskForm):
+    name = StringField('name', validators=[DataRequired()])
 
 
 
