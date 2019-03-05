@@ -13,38 +13,58 @@
     </head>
     <body>
     <!-- Navigation -->
-<div class="navbar">
-
-<div class="container">
-
-    <div class="navbar-header">
-
-        <!-- Brand -->
-        <a href="javascript:void(0);" class="navbar-brand scroll-top"><img class="logo" width="45" height="45" alt="lightning bolt logo" src="http://www.hirecar.xyz/static/img/star.png"></img></a>
-
-        <!-- Mobile Navigation -->
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
-            <span class="ion-navicon toggle-icon"></span>
-        </button>
-
-    </div>
-
-    <!-- Main Navigation -->
-    <nav class="collapse navbar-collapse navHeaderCollapse" id="myScrollSpy" role="navigation">
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#section1" data-id="section1" class="scroll-link">Home</a></li>
-            <li><a href="#section2" data-id="section2" class="scroll-link">Portfolio</a></li>
-            <li><a href="#section3" data-id="section3" class="scroll-link">About</a></li>
-            <li><a href="#section4" data-id="section4" class="scroll-link">Team</a></li>
-            <li><a href="#section5" data-id="section5" class="scroll-link">Services</a></li>
-            <li><a href="#section6" data-id="section6" class="scroll-link">Contact</a></li>
-        </ul>
-    </nav>
-
-</div>
-
-</div>
-
+<!--Navbar -->
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark secondary-color lighten-1">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-555"
+    aria-controls="navbarSupportedContent-555" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-555" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Dropdown
+        </a>
+        <div class="dropdown-menu dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-555">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link waves-effect waves-light">1
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      <li class="nav-item avatar dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0" alt="avatar image">
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-secondary" aria-labelledby="navbarDropdownMenuLink-55">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!--/.Navbar -->
 
         {% block content %}{% endblock %}
     <div class="container fa-copyright">

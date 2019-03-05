@@ -1,9 +1,9 @@
 from flask import Flask, session, g, render_template, json, request, flash
 from jinja2 import Template
 from datetime import datetime
-from flask_wtf import FlaskForm
-from wtforms import StringField
-from wtforms.validators import DataRequired
+#from flask_wtf import FlaskForm
+#from wtforms import StringField
+#from wtforms.validators import DataRequired
 
 
 app = Flask(__name__)
