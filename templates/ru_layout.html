@@ -13,41 +13,37 @@
     </head>
     <body>
     <!-- Navigation -->
-    <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<div class="navbar">
+
+<div class="container">
+
+    <div class="navbar-header">
+
+        <!-- Brand -->
+        <a href="javascript:void(0);" class="navbar-brand scroll-top"><img class="logo" width="45" height="45" alt="lightning bolt logo" src="http://www.hirecar.xyz/static/img/star.png"></img></a>
+
+        <!-- Mobile Navigation -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+            <span class="ion-navicon toggle-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/ru/index">Дом <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ru/minivan">МИНИВЕН</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ru/pricelist">Расценки</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ru/lux">LUX</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ru/budget">Бюджетные</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/p">Prices test</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/form">form</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+
     </div>
 
+    <!-- Main Navigation -->
+    <nav class="collapse navbar-collapse navHeaderCollapse" id="myScrollSpy" role="navigation">
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#section1" data-id="section1" class="scroll-link">Home</a></li>
+            <li><a href="#section2" data-id="section2" class="scroll-link">Portfolio</a></li>
+            <li><a href="#section3" data-id="section3" class="scroll-link">About</a></li>
+            <li><a href="#section4" data-id="section4" class="scroll-link">Team</a></li>
+            <li><a href="#section5" data-id="section5" class="scroll-link">Services</a></li>
+            <li><a href="#section6" data-id="section6" class="scroll-link">Contact</a></li>
+        </ul>
+    </nav>
+
+</div>
+
+</div>
 
 
         {% block content %}{% endblock %}
