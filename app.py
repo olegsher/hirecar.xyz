@@ -73,17 +73,6 @@ def budget():
     meta_description = "budget/ Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
     return render_template("budget.html", title=title, meta_description = meta_description)
 
-@app.route('/form')
-def form():
-    title = "form page. Прокат аренда авто в Израиле +972-58-7710101"
-    meta_description = "Form Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
-    form = FlaskForm(csrf_enabled=False)
-    return render_template("form.html", title=title, meta_description=meta_description)
-
-class MyForm(FlaskForm):
-    name = StringField('name', validators=[DataRequired()])
-
-
 
 @app.errorhandler(404)
 def not_found(error):
