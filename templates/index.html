@@ -23,9 +23,7 @@
 
     <div class="container">
     <div class="card-columns text-center">
-
     {% for k in range(0,pl_size)  %}
-
         <div class="card mb-4 box-shadow">
             <div class="card-header">
                 <h4 id="{{ pl[k].get("Car Group") }}" class="my-0 font-weight-normal">{{ pl[k].get("Vehicle Type")  }}  <br><small class="text-muted">или подобный от <span class="badge badge-success">{{ pl[k].get("Ex. Day (8+)Low")  }} </span> USD/день</small></h4></div>
@@ -43,59 +41,12 @@
                                 <img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/star.png')}}" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле"  />
                                     из {{ range(265, 387) | random }} на {{ now.strftime("%A %d. %B %Y") }}
                             </li>
-                            {#<li class="text-left">
-                                <hr />Форма обратной связи:
-                            <form action="mail_send.php" method="post" id="request-form">
-                                <div class="form-group">
-                                    <div class="col-auto">
-                                        <input type="text" class="form-control" required  name="name" placeholder="Ваше Имя">
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="tel" class="form-control" required  name="phone" placeholder="Тел +(код страны-города)ххх-хххх">
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="whatsapp" id="whatsapp" value="whatsapp"> WhatsApp
-                                            <span class="form-check-sign">
-                                            <span class="check"></span>
-                                        </span>
-                                        </label>
-                                    <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" name="viber" id="viber" value="viber"> Viber
-                                    <span class="form-check-sign">
-                                        <span class="check"></span>
-                                        </span>
-                                    </label>
-                                    </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <input type="email" class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required id="email" placeholder="Ваша почта">
-                                    </div>
-                                        <input type="hidden" name="car-select" value="Car Category: {{ pl[k].get("Car Group")  }} , {{ pl[k].get("Vehicle Type")  }}  или подобный">
-                                </div>
-                    <!-- <div class="col-auto">
-                       <div class="g-recaptcha" data-sitekey="6LfFGG8UAAAAAAFZaF847BdJVUJDDjaiJAmMi0BJ"></div>
-                    </div> -->
-                                <div class="col-auto">
-                                    <input type="submit" name="submit" value="Отправить">
-                                </div>
-                            </form>
-                        </li>#}
                     </ul>
-<!--             <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button> -->
-
-
             </div>
         </div>
-
-
-
-
     {% endfor %}
     </div>
     </div>
-
-
-
 
 <div class="container">
 
@@ -104,7 +55,5 @@
 <br>* Сумма помесячной аренды(30+ дней) -  включает обязательные страховки и 150км в день
 <br>* Все цены указанны на сайте в : USD $  <hr />
 </div>
-
-
 
 {% endblock %}
