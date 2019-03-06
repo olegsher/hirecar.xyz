@@ -12,11 +12,11 @@
         <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/bootstrap.css') }}">
         <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/bootstrap-grid.css') }}">
         <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/bootstrap-reboot.css') }}">
-        <!-- Libraries CSS Files -->
-        <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/font-awesome.min.css') }}">
+        <!-- Libraries CSS Files
+        <link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='css/font-awesome.min.css') }}"> -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-
-
+        <meta name="yandex-verification" content="018e40b0451f275e" />
 
         <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
@@ -109,23 +109,23 @@
     <div class="container fa-copyright">
         <p>Copyright © 2014 - {{ now.year }} Vastama ltd аренда автомобиля в Израиле.</p>
     </div>
-        <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
-        <script src="{{url_for('static', filename='js/bootstrap.bundle.js')}}"></script>
-        <script src="{{url_for('static', filename='js/vue.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/vue.js') }}"></script>
     <!-- Required JavaScript Libraries -->
-  <script src="{{url_for('static', filename='lib/jquery/jquery.min.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/jquery/jquery-migrate.min.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/superfish/hoverIntent.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/superfish/superfish.min.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/tether/js/tether.min.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/stellar/stellar.min.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/counterup/counterup.min.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/waypoints/waypoints.min.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/easing/easing.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/stickyjs/sticky.j')}}s"></script>
-  <script src="{{url_for('static', filename='lib/parallax/parallax.js')}}"></script>
-  <script src="{{url_for('static', filename='lib/lockfixed/lockfixed.min.js')}}"></script>
+        <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/superfish/hoverIntent.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/superfish/superfish.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/tether/js/tether.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/stellar/stellar.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/easing/easing.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/stickyjs/sticky.j') }}s"></script>
+        <script src="{{ url_for('static', filename='lib/parallax/parallax.js') }}"></script>
+        <script src="{{ url_for('static', filename='lib/lockfixed/lockfixed.min.js') }}"></script>
 
     </body>
 </html>
