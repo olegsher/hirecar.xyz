@@ -1,6 +1,7 @@
 from flask import Flask, session, g, render_template, json, request, flash
 from jinja2 import Template
 from datetime import datetime
+
 #from flask_wtf import FlaskForm
 #from wtforms import StringField
 #from wtforms.validators import DataRequired
@@ -73,6 +74,12 @@ def budget():
     meta_description = "budget/ Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
     return render_template("budget.html", title=title, meta_description = meta_description)
 
+@app.route('/menu')
+def _menu():
+    title = "menu. test"
+    meta_description = "menu"
+    return render_template("budget.html", title=title, meta_description=meta_description)
+
 
 @app.errorhandler(404)
 def not_found(error):
@@ -80,4 +87,4 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug=True)
