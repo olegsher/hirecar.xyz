@@ -17,13 +17,31 @@
 	</div>
 <hr />
 Возраст водителя (если водителей несколько то возраст самого младшего):
-    <input type="radio" id="one" value="One" v-model="picked">
-    <label for="one">21-22</label>
-    <input type="radio" id="two" value="Two" v-model="picked">
-    <label for="two">23-24</label>
-      <input type="radio" id="two" value="Two" v-model="picked">
-    <label for="two">25+</label>
-    <span>Выбрано: [[ picked ]]</span>
+    <input type="radio" id="21" value="21" v-model="driver_age">
+    <label for="21">21-22</label>
+    <input type="radio" id="23" value="23" v-model="driver_age">
+    <label for="23">23-24</label>
+      <input type="radio" id="25" value="25" v-model="driver_age">
+    <label for="25">25+</label>
+      <input type="radio" id="28" value="28" v-model="driver_age">
+    <label for="28">28+</label>
+    <!--<span>Выбрано: [[ driver_age ]]</span> -->
+<br>
+      Стаж вождения (если водителей несколько то возраст самого младшего):
+    <input type="radio" id="1" value="1" v-model="driver_licence">
+    <label for="1">1-2</label>
+    <input type="radio" id="3" value="3" v-model="driver_licence">
+    <label for="3">3+</label>
+    <!--<span>Выбрано: [[ driver_licence ]]</span> -->
+<br>
+      Турист(есть вкладыш с визой В2\В3)
+<input type="checkbox" id="visa" v-model="visa">
+<!--<label for="visa">[[ visa ]]</label> -->
+      <br>
+      Есть кредитная карта покрывающая обязательную страховку
+<input type="checkbox" id="cred_insurance_decline" v-model="cred_insurance_decline">
+<!--<label for="cred_insurance_decline">[[ cred_insurance_decline ]]</label> -->
+
       <hr />
 </div>
 </div>
@@ -31,10 +49,12 @@
 
     <div class="container">
     <div class="card-columns text-center">
+
+        <div v-if="cred_insurance_decline">
     {% for k in range(0,pl_size)  %}
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 id="{{ pl[k].get("Car Group") }}" class="my-0 font-weight-normal">{{ pl[k].get("Vehicle Type")  }}  <br><small class="text-muted">или подобный от <span class="badge badge-success">{{ pl[k].get("Ex. Day (8+)Low")  }} </span> USD/день</small></h4></div>
+                <h4 id="{{ pl[k].get("Car Group") }}" class="my-0 font-weight-normal">{{ pl[k].get("Vehicle Type")  }}  <br><small class="text-muted">или подобный <br>от <span class="badge badge-success">{{ pl[k].get("Ex. Day (8+)Low")  }} </span> USD/день</small><small v-if="visa"></small><small class="text-muted" v-else="visa"> + НДС</small></h4></div>
                     <div class="card-body">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li class="text-left">Категория: {{ pl[k].get("Car Group")  }}  | Сидений: {{ pl[k].get("Seats")  }} </li>
@@ -48,13 +68,37 @@
                                 <img style="float:left" class="img-responsive" src="http://www.hirecar.xyz/static/img/{{ range(4, 6) | random }}.png" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }} или подобный в Израиле"  />
                                 <img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/star.png')}}" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле"  />
                                     из {{ range(265, 387) | random }} на {{ now.strftime("%A %d. %B %Y") }}
-                                <input type="checkbox" id="checkbox" v-model="checked">
-                                <label for="checkbox">[[ checked ]]</label>
                             </li>
                     </ul>
             </div>
         </div>
     {% endfor %}
+    </div>
+    <div v-else="cred_insurance_decline">
+    {% for k in range(0,pl_size)  %}
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 id="{{ pl[k].get("Car Group") }}" class="my-0 font-weight-normal">{{ pl[k].get("Vehicle Type")  }}  <br><small class="text-muted">или подобный <br>от <span class="badge badge-success">{{ pl[k].get("Ex. Day (8+)Low") + pl[k].get("CDW") + pl[k].get("TP")  }} </span> USD/день</small><small v-if="visa"></small><small class="text-muted" v-else="visa"> + НДС</small></h4></div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li class="text-left">Категория: {{ pl[k].get("Car Group")  }}  | Сидений: {{ pl[k].get("Seats")  }} </li>
+                            <li class="text-left">Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)</li>
+                            <hr />
+                            <li class="text-left">Безлимитный километраж при заказе 3-29 дней</li>
+                            <hr />
+                            <li class="text-left">При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
+                            <li><img class="img-fluid" src="http://www.hirecar.xyz/static/img/CarCategories/{{pl[k].get("Car Group")}}.jpg" alt="аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле" /> </li>
+                            <li><br>
+                                <img style="float:left" class="img-responsive" src="http://www.hirecar.xyz/static/img/{{ range(4, 6) | random }}.png" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }} или подобный в Израиле"  />
+                                <img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/star.png')}}" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле"  />
+                                    из {{ range(265, 387) | random }} на {{ now.strftime("%A %d. %B %Y") }}
+                            </li>
+                    </ul>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+
     </div>
     </div>
 
@@ -71,6 +115,8 @@
 
     </div>
 
+
+
 {% endblock %}
 
 {% block scripts %}
@@ -79,7 +125,11 @@
           el: '#app',
           delimiters: [ '[[', ']]' ],
           data: {
-              title: "hello world"
+              title: "hello world",
+              driver_licence: '',
+              driver_age: '',
+              visa: '',
+              cred_insurance_decline: ''
           }
       })
   </script>
