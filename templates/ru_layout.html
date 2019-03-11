@@ -68,8 +68,9 @@
 
 
         {% block content %}{% endblock %}
+  <div id="app"></div>
 
-    <div class="container fa-copyright">
+    <div class="container">
         <p>Copyright © 2014 - {{ now.year }} Vastama ltd аренда автомобиля в Израиле.</p>
     </div>
         <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -78,6 +79,8 @@
         <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
         <!-- development version, includes helpful console warnings -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+  {% block scripts %}{% endblock %}
 
   <!-- <script src="{{ url_for('static', filename='js/main.js')  }}"></script> -->
     <!-- Required JavaScript Libraries -->
