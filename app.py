@@ -51,6 +51,13 @@ def index():
     return render_template("index.html", title = title, meta_description = meta_description)
 
 
+@app.route('/ru/index_2')
+def index_2():
+    title = "Прокат аренда авто в Израиле +972-58-7710101"
+    meta_description = "Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
+    return render_template("index_2.html", title = title, meta_description = meta_description)
+
+
 @app.route('/ru/about')
 def about():
     title = "About. Прокат аренда авто в Израиле +972-58-7710101"
