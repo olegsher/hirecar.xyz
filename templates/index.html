@@ -15,16 +15,19 @@
   <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="Огромные скидки при бронировании автомобиля на 30+ дней" width="20" height="20" /> Огромные скидки при бронировании автомобиля на 30+ дней
   <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="WhatsApp/Viber +972-58-771-0101" width="20" height="20" /> Напишите нам на <a style="font-family: Times, serif; color:red">WhatsApp/Viber +972-58-771-0101</a> и наш менеджер вернется к вам с лучшим предложением
 	</div>
-
-
-    <input type="radio" id="one" value="One" [[v-model]]="picked">
-    <label for="one">One</label>
-    <input type="radio" id="two" value="Two" [[v-model]]="picked">
-    <label for="two">Two</label>
-    <span>Picked: [[ picked ]]</span>
+<hr />
+Возраст водителя (если водителей несколько то возраст самого младшего):
+    <input type="radio" id="one" value="One" v-model="picked">
+    <label for="one">21-22</label>
+    <input type="radio" id="two" value="Two" v-model="picked">
+    <label for="two">23-24</label>
+      <input type="radio" id="two" value="Two" v-model="picked">
+    <label for="two">25+</label>
+    <span>Выбрано: [[ picked ]]</span>
+      <hr />
 </div>
 </div>
-	<hr />
+
 
     <div class="container">
     <div class="card-columns text-center">
@@ -61,10 +64,11 @@
 <br>* Аренда (3-29 дней) и понедельная - безлимитный километраж и НЕ ВКЛЮЧАЕТ обязательные страховки и НДС
 <br>* Сумма помесячной аренды(30+ дней) -  включает обязательные страховки и 150км в день
 <br>* Все цены указанны на сайте в : USD $  <hr />
+    [[ Math.ceil(Math.random()*10) ]]
 </div>
 
 
-    [[ Math.ceil(Math.random()*10) ]]
+
     </div>
 
 {% endblock %}
