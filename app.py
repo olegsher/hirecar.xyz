@@ -10,27 +10,6 @@ from flask_mail import Mail, Message
 
 app = Flask(__name__)
 
-
-mail_settings = {
-    "MAIL_SERVER": 'smtp.gmail.com',
-    "MAIL_PORT": 465,
-    "MAIL_USE_TLS": False,
-    "MAIL_USE_SSL": True,
-    "MAIL_USERNAME": 'admin@sher.biz',
-    "MAIL_PASSWORD": '!!!os345o'
-}
-
-app.config.update(mail_settings)
-mail = Mail(app)
-
-if __name__ == '__main__':
-    with app.app_context():
-        msg = Message(subject="Hello",
-                      sender=app.config.get("MAIL_USERNAME"),
-                      recipients=["test@sher.biz"], # replace with your email for testing
-                      body="This is a test email I sent with Gmail and Python!")
-        mail.send(msg)
-
 json1_file = open('static/albar_pricelist.json')
 json1_str = json1_file.read()
 albar_dict = json.loads(json1_str)
@@ -56,6 +35,12 @@ def p():
   title = "Прокат аренда авто в Израиле +972-58-7710101"
   meta_description = "Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
   return render_template("p.html", title = title, meta_description = meta_description)
+
+@app.route('/contact_form')
+def contact_form():
+    title = "Прокат аренда авто в Израиле +972-58-7710101"
+    meta_description = "Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
+    return render_template("contact_form.html", title = title, meta_description = meta_description)
 
 
 @app.route('/')
