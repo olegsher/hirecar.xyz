@@ -1,7 +1,7 @@
 {% extends "ru_layout.html" %}
 
 {% block content %}
-
+<div id="app">
 <hr />
 <div class="main main-raised">
   <div class="container">
@@ -15,7 +15,14 @@
   <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="Огромные скидки при бронировании автомобиля на 30+ дней" width="20" height="20" /> Огромные скидки при бронировании автомобиля на 30+ дней
   <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="WhatsApp/Viber +972-58-771-0101" width="20" height="20" /> Напишите нам на <a style="font-family: Times, serif; color:red">WhatsApp/Viber +972-58-771-0101</a> и наш менеджер вернется к вам с лучшим предложением
 	</div>
-  </div>
+
+
+    <input type="radio" id="one" value="One" [[v-model]]="picked">
+    <label for="one">One</label>
+    <input type="radio" id="two" value="Two" [[v-model]]="picked">
+    <label for="two">Two</label>
+    <span>Picked: [[ picked ]]</span>
+</div>
 </div>
 	<hr />
 
@@ -38,6 +45,8 @@
                                 <img style="float:left" class="img-responsive" src="http://www.hirecar.xyz/static/img/{{ range(4, 6) | random }}.png" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }} или подобный в Израиле"  />
                                 <img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/star.png')}}" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле"  />
                                     из {{ range(265, 387) | random }} на {{ now.strftime("%A %d. %B %Y") }}
+                                <input type="checkbox" id="checkbox" v-model="checked">
+                                <label for="checkbox">[[ checked ]]</label>
                             </li>
                     </ul>
             </div>
@@ -53,5 +62,22 @@
 <br>* Сумма помесячной аренды(30+ дней) -  включает обязательные страховки и 150км в день
 <br>* Все цены указанны на сайте в : USD $  <hr />
 </div>
+
+
+    [[ Math.ceil(Math.random()*10) ]]
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+      var app = new Vue({
+          el: '#app',
+          delimiters: [ '[[', ']]' ],
+          data: {
+              title: "hello world"
+          }
+      })
+  </script>
 
 {% endblock %}
