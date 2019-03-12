@@ -54,7 +54,7 @@
     {% for k in range(0,pl_size)  %}
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 id="{{ pl[k].get("Car Group") }}" class="my-0 font-weight-normal">{{ pl[k].get("Vehicle Type")  }}  <br><small class="text-muted">или подобный <br>от <span class="badge badge-success">{{ pl[k].get("Ex. Day (8+)Low")  }} </span> USD/день</small><small v-if="visa"></small><small class="text-muted" v-else="visa"> + НДС</small></h4></div>
+                <h4 id="{{ pl[k].get("Car Group") }}" class="my-0 font-weight-normal"><input type="radio" value="{{ pl[k].get("Vehicle Type")  }} " id="car" v-model="car"> {{ pl[k].get("Vehicle Type")  }}  <br><small class="text-muted">или подобный <br>от <span class="badge badge-success">{{ pl[k].get("Ex. Day (8+)Low")  }} </span> USD/день</small><small v-if="visa"></small><small class="text-muted" v-else="visa"> + НДС</small></h4></div>
                     <div class="card-body">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li class="text-left">Категория: {{ pl[k].get("Car Group")  }}  | Сидений: {{ pl[k].get("Seats")  }} </li>
@@ -78,7 +78,7 @@
     {% for k in range(0,pl_size)  %}
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 id="{{ pl[k].get("Car Group") }}" class="my-0 font-weight-normal">{{ pl[k].get("Vehicle Type")  }}  <br><small class="text-muted">или подобный <br>от <span class="badge badge-success">{{ pl[k].get("Ex. Day (8+)Low") + pl[k].get("CDW") + pl[k].get("TP")  }} </span> USD/день</small><small v-if="visa"></small><small class="text-muted" v-else="visa"> + НДС</small></h4></div>
+                <h4 id="{{ pl[k].get("Car Group") }}" class="my-0 font-weight-normal"><input type="radio" value="{{ pl[k].get("Vehicle Type")  }} " id="car" v-model="car"> {{ pl[k].get("Vehicle Type")  }}  <br><small class="text-muted">или подобный <br>от <span class="badge badge-success">{{ pl[k].get("Ex. Day (8+)Low") + pl[k].get("CDW") + pl[k].get("TP")  }} </span> USD/день</small><small v-if="visa"></small><small class="text-muted" v-else="visa"> + НДС</small></h4></div>
                     <div class="card-body">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li class="text-left">Категория: {{ pl[k].get("Car Group")  }}  | Сидений: {{ pl[k].get("Seats")  }} </li>
@@ -129,7 +129,8 @@
               driver_licence: '',
               driver_age: '',
               visa: '',
-              cred_insurance_decline: ''
+              cred_insurance_decline: '',
+              car: ''
           }
       })
   </script>
