@@ -71,11 +71,10 @@
                     <div class="card-body">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li class="text-left">Категория: {{ pl[k].get("Car Group")  }}  | Сидений: {{ pl[k].get("Seats")  }} </li>
-                            <li class="text-left">Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)</li>
-                            <hr />
-                            <li class="text-left">Безлимитный километраж при заказе 3-29 дней</li>
-                            <hr />
-                            <li class="text-left">При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
+                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)"> Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)</li>
+                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Обязательные страховки НЕ включены в цену(покрытие кредитной картой)"> Обязательные страховки НЕ включены в цену(покрытие кредитной картой)</li>
+                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Безлимитный километраж при заказе 3-29 дней<"> Безлимитный километраж при заказе 3-29 дней</li>
+                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="При заказе 30+ дней от {{ pl[k].get("Month (30+)Low")  }} "> При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
                             <li><img class="img-fluid" src="http://www.hirecar.xyz/static/img/CarCategories/{{pl[k].get("Car Group")}}.jpg" alt="аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле" /> </li>
                             <li><br>
                                 <img style="float:left" class="img-responsive" src="http://www.hirecar.xyz/static/img/{{ range(4, 6) | random }}.png" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }} или подобный в Израиле"  />
@@ -95,11 +94,10 @@
                     <div class="card-body">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li class="text-left">Категория: {{ pl[k].get("Car Group")  }}  | Сидений: {{ pl[k].get("Seats")  }} </li>
-                            <li class="text-left">Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)</li>
-                            <hr />
-                            <li class="text-left">Безлимитный километраж при заказе 3-29 дней</li>
-                            <hr />
-                            <li class="text-left">При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
+                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)"> Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)</li>
+                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Обязательные страховки уже включены в цену"> Обязательные страховки уже включены в цену</li>
+                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Безлимитный километраж при заказе 3-29 дней"> Безлимитный километраж при заказе 3-29 дней</li>
+                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="При заказе 30+ дней от {{ pl[k].get("Month (30+)Low")  }} "> При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
                             <li><img class="img-fluid" src="http://www.hirecar.xyz/static/img/CarCategories/{{pl[k].get("Car Group")}}.jpg" alt="аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле" /> </li>
                             <li><br>
                                 <img style="float:left" class="img-responsive" src="http://www.hirecar.xyz/static/img/{{ range(4, 6) | random }}.png" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }} или подобный в Израиле"  />
