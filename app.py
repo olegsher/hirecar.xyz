@@ -24,8 +24,8 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 #Development
 
 
-#@app.route('/send-mail')
-@app.context_processor
+@app.route('/send-mail')
+#@app.context_processor
 def send_mail():
     msg = mail.send_message(
         'Send Mail tutorial!',
