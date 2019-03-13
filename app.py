@@ -59,6 +59,7 @@ def pl_size():
     return {'pl_size': len(albar_dict)}
 
 
+
 @app.route('/p')
 def p():
   title = "Прокат аренда авто в Израиле +972-58-7710101"
