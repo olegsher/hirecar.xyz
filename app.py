@@ -7,11 +7,11 @@ import os
 app = Flask(__name__)
 
 
-#app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-#app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 
-app.config['MAIL_USERNAME'] = 'admin@sher.biz'
-app.config['MAIL_PASSWORD'] = '!!!os345o'
+#app.config['MAIL_USERNAME'] = 'admin@sher.biz'
+#app.config['MAIL_PASSWORD'] = '!!!os345o'
 
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
