@@ -36,6 +36,7 @@ def send_mail():
     return 'Mail sent'
 
 
+
 #End of development
 
 json1_file = open('static/albar_pricelist.json')
