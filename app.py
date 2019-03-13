@@ -2,13 +2,52 @@ from flask import Flask, session, g, render_template, json, request, flash
 from jinja2 import Template
 from datetime import datetime
 from flask_mail import Mail, Message
-
-#from flask_wtf import FlaskForm
-#from wtforms import StringField
-#from wtforms.validators import DataRequired
-
+import os
 
 app = Flask(__name__)
+
+
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = "!!!os345o"
+
+app.config.update(
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT=465,
+    MAIL_USE_SSL=True
+    #MAIL_USERNAME = 'admin@sher.biz',
+    #MAIL_PASSWORD = '!!!os345o',
+    #MAIL_USERNAME = os.environ.get(MAIL_USERNAME)
+    #MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
+    #app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+)
+
+mail = Mail(app)
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+
+#Development
+
+
+@app.route('/send-mail')
+def send_mail():
+    msg = mail.send_message(
+        'Send Mail tutorial!',
+        sender='test@sher.biz',
+        recipients=['test@sher.biz'],
+        body="Congratulations you've succeeded!"
+    )
+    return 'Mail sent'
+
+
+
+
+
+#End of development
+
+
+
+
+
 
 json1_file = open('static/albar_pricelist.json')
 json1_str = json1_file.read()
@@ -34,7 +73,7 @@ def pl_size():
 def p():
   title = "Прокат аренда авто в Израиле +972-58-7710101"
   meta_description = "Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
-  return render_template("p.html", title = title, meta_description = meta_description)
+  return render_template("form.html", title = title, meta_description = meta_description)
 
 @app.route('/contact_form')
 def contact_form():
@@ -46,6 +85,7 @@ def contact_form():
 @app.route('/')
 @app.route('/ru/index')
 def index():
+    flash('You were successfully logged in')
     title = "Прокат аренда авто в Израиле +972-58-7710101"
     meta_description = "Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
     return render_template("index.html", title = title, meta_description = meta_description)
@@ -98,6 +138,9 @@ def _menu():
 
 @app.errorhandler(404)
 def not_found(error):
+    app.logger.debug('A value for debugging')
+    app.logger.warning('A warning occurred (%d apples)', 42)
+    app.logger.error('An error occurred')
     return render_template('404.html'), 404
 
 
