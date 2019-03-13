@@ -10,8 +10,6 @@ app = Flask(__name__)
 app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
 
-#app.config['MAIL_USERNAME'] = 'admin@sher.biz'
-#app.config['MAIL_PASSWORD'] = '!!!os345o'
 
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
@@ -26,7 +24,8 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 #Development
 
 
-@app.route('/send-mail')
+#@app.route('/send-mail')
+@app.context_processor
 def send_mail():
     msg = mail.send_message(
         'Send Mail tutorial!',
@@ -36,16 +35,7 @@ def send_mail():
     )
     return 'Mail sent'
 
-
-
-
-
 #End of development
-
-
-
-
-
 
 json1_file = open('static/albar_pricelist.json')
 json1_str = json1_file.read()
