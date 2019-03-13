@@ -1,12 +1,5 @@
-from flask import Flask, session, g, render_template, json, request, flash
-from jinja2 import Template
-from datetime import datetime
-from flask_mail import Mail, Message
-
-
-
-app = Flask(__name__)
-
+from flask_mail import Message
+from app import mail
 
 mail_settings = {
     "MAIL_SERVER": 'smtp.gmail.com',
@@ -17,14 +10,15 @@ mail_settings = {
     "MAIL_PASSWORD": '!!!os345o'
 }
 
-app.config.update(mail_settings)
-mail = Mail(app)
+
+@mail.route('/send-mail/')
+def send_mail():
+    msg = mail.send_message(
+        'Send Mail tutorial!',
+        sender='ri******a@gmail.com',
+        recipients=['ri*********07@msn.com'],
+        body="Congratulations you've succeeded!"
+    )
+    return 'Mail sent'
 
 
-if __name__ == '__main__':
-    with app.app_context():
-        msg = Message(subject="Hello",
-                      sender="admin@sher.biz",
-                      recipients=["test@sher.biz"], # replace with your email for testing
-                      body="This is a test email I sent with Gmail and Python!")
-        mail.send(msg)
