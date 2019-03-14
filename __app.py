@@ -44,6 +44,7 @@ def send_mail():
 
 
 
+
 json1_file = open('static/albar_pricelist.json')
 json1_str = json1_file.read()
 albar_dict = json.loads(json1_str)
