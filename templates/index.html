@@ -117,6 +117,28 @@
 
 <div class="container">
 
+    <!--<a class="" href="/send-mail">mail</a> -->
+
+    message = cred_insurance_decline
+
+<form action="{{ url_for('contact') }}" method=post>
+    {{ form.hidden_tag() }}
+
+    {{ form.name.label }}
+    {{ form.name }}
+
+    {{ form.email.label }}
+    {{ form.email }}
+
+    {{ form.subject.label }}
+    {{ form.subject }}
+
+    {{ form.message.label }}
+    {{ form.message }}
+
+    {{ form.submit }}
+  </form>
+
 * Аренда (1-2 дня)  -  включает 250км в день и НЕ ВКЛЮЧАЕТ обязательные страховки и НДС
 <br>* Аренда (3-29 дней) и понедельная - безлимитный километраж и НЕ ВКЛЮЧАЕТ обязательные страховки и НДС
 <br>* Сумма помесячной аренды(30+ дней) -  включает обязательные страховки и 150км в день

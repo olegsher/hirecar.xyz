@@ -2,6 +2,7 @@ from flask import Flask, session, g, render_template, json, request, flash
 from jinja2 import Template
 from datetime import datetime
 from flask_mail import Mail, Message
+from forms import ContactForm
 import os
 
 app = Flask(__name__)
@@ -23,18 +24,38 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 #Development
 
 
-@app.route('/send-mail')
-def send_mail():
-    msg = mail.send_message(
-        'Send Mail tutorial!',
-        sender='test@sher.biz',
-        recipients=['test@sher.biz'],
-        body="Congratulations you've succeeded!"
-    )
-    return 'Mail sent'
+#@app.route('/send-mail')
+#@app.context_processor
+#def send_mail(recipient, body_text, subject):
+#    msg = mail.send_message(
+#       subject,
+#       sender='admin@sher.biz',
+#       recipients=[recipient],
+#       body=body_text
+#   )
+    #return {'recipient':recipient, 'body_text': body_text,'subject': subject }
+    #return {'Mail sent'}
 
+@app.route('/', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
 
+    if request.method == 'POST':
+        if form.validate() == False:
+            flash('All fields are required.')
+            return render_template('contact.html', form=form)
+        else:
+            msg = Message(form.subject.data, sender='admin@sher.biz', recipients=['test@sher.biz'])
+            msg.body = """
+      From: %s <%s>
+      %s
+      """ % (form.name.data, form.email.data, form.message.data)
+            mail.send(msg)
 
+            return 'Form posted.'
+
+    elif request.method == 'GET':
+        return render_template('index.html', form=form)
 
 
 #End of development
@@ -75,7 +96,7 @@ def p():
 def contact_form():
     title = "Прокат аренда авто в Израиле +972-58-7710101"
     meta_description = "Прокат аренда авто в Израиле. Отделения проката в Бен Гурион, Тель Авив Иерусалим Хайфа Эйлат Без предоплаты. Говорим по русски"
-    return render_template("contact_form.html", title = title, meta_description = meta_description)
+    return render_template("contact.html", title = title, meta_description = meta_description)
 
 
 @app.route('/')
