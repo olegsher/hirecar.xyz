@@ -2,6 +2,8 @@ from flask import Flask, session, g, render_template, json, request, flash
 from jinja2 import Template
 from datetime import datetime
 from flask_mail import Mail, Message
+from flask_wtf import  Form
+from wtforms import StringField, TextAreaField, SubmitField, HiddenField, ValidationError, validators, DateField
 from forms import ContactForm
 import os
 
@@ -23,36 +25,28 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 #Development
 
+class ContactForm1(Form):
+    name = StringField(u'Full Name', [validators.required(), validators.length(max=10)])
+    email = StringField("Email")
+    subject = StringField("Subject")
+    message = TextAreaField("Message")
+    submit = SubmitField("Send")
 
-#@app.route('/send-mail')
-#@app.context_processor
-#def send_mail(recipient, body_text, subject):
-#    msg = mail.send_message(
-#       subject,
-#       sender='admin@sher.biz',
-#       recipients=[recipient],
-#       body=body_text
-#   )
-    #return {'recipient':recipient, 'body_text': body_text,'subject': subject }
-    #return {'Mail sent'}
+
 
 @app.route('/', methods=['GET', 'POST'])
 def contact():
-    form = ContactForm()
+    form = ContactForm1()
 
     if request.method == 'POST':
         if form.validate() == False:
             flash('All fields are required.')
-            return render_template('contact.html', form=form)
+            return render_template('index.html', form=form)
         else:
             msg = Message(form.subject.data, sender='admin@sher.biz', recipients=['test@sher.biz'])
-            msg.body = """
-      From: %s <%s>
-      %s
-      """ % (form.name.data, form.email.data, form.message.data)
+            msg.body = """ From: %s <%s> %s """ % (form.name.data, form.email.data, form.message.data)
             mail.send(msg)
-
-            return 'Form posted.'
+        return 'Спасибо за запрос... TBD'
 
     elif request.method == 'GET':
         return render_template('index.html', form=form)
