@@ -35,6 +35,7 @@ class ContactForm1(Form):
 
 
 @app.route('/', methods=['GET', 'POST'])
+@app.route('/ru/index', methods=['GET', 'POST'])
 def contact():
     form = ContactForm1()
 
