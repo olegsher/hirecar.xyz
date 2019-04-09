@@ -2,9 +2,12 @@
 
 {% block content %}
 <div id="app">
-<hr />
+
+
 <div class="main main-raised">
   <div class="container">
+      <img style="float:top" class="img-responsive" src="{{url_for('static', filename='img/hirecar_logo.png')}}" alt="Бронирование автомобиля в Израиле по лучшей онлайн цене"  />
+<hr />
     <div class="section text-left">
       <h1>Vastama - агенство по аренде прокату автомобилей в Израиле</h1>
   <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="Бронирование автомобиля в Израиле по лучшей онлайн цене" width="20" height="20" /> Бронирование автомобиля в Израиле по лучшей онлайн цене	(до 40% экономии при сравнении с заказом в отделении компании)
@@ -99,10 +102,10 @@
                             <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Безлимитный километраж при заказе 3-29 дней"> Безлимитный километраж при заказе 3-29 дней</li>
                             <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="При заказе 30+ дней от {{ pl[k].get("Month (30+)Low")  }} "> При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
                             <li><img class="img-fluid" src="http://www.hirecar.xyz/static/img/CarCategories/{{pl[k].get("Car Group")}}.jpg" alt="аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле" /> </li>
-                            <li><br>
+                            <li><!--<br>
                                 <img style="float:left" class="img-responsive" src="http://www.hirecar.xyz/static/img/{{ range(4, 6) | random }}.png" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }} или подобный в Израиле"  />
-                                <img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/star.png')}}" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле"  />
-                                    из {{ range(265, 387) | random }} на {{ now.strftime("%A %d. %B %Y") }}
+                                 <img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/star.png')}}" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле"  />
+                                    из {{ range(265, 387) | random }} на {{ now.strftime("%A %d. %B %Y") }} -->
                             </li>
                     </ul>
             </div>
@@ -117,33 +120,10 @@
 
 <div class="container">
 
-    <!--<a class="" href="/send-mail">mail</a> -->
-
-    message = cred_insurance_decline
-
-<form action="{{ url_for('contact') }}" method=post>
-    {{ form.hidden_tag() }}
-
-    {{ form.name.label }}
-    {{ form.name }}
-
-    {{ form.email.label }}
-    {{ form.email }}
-
-    {{ form.subject.label }}
-    {{ form.subject }}
-
-    {{ form.message.label }}
-    {{ form.message }}
-
-    {{ form.submit }}
-  </form>
-
-* Аренда (1-2 дня)  -  включает 250км в день и НЕ ВКЛЮЧАЕТ обязательные страховки и НДС
-<br>* Аренда (3-29 дней) и понедельная - безлимитный километраж и НЕ ВКЛЮЧАЕТ обязательные страховки и НДС
+* Аренда (1-2 дня)  -  включает 250км в день
+<br>* Аренда (3-29 дней) и понедельная - безлимитный километраж
 <br>* Сумма помесячной аренды(30+ дней) -  включает обязательные страховки и 150км в день
 <br>* Все цены указанны на сайте в : USD $  <hr />
-    [[ Math.ceil(Math.random()*10) ]]
 </div>
 
 
@@ -160,12 +140,14 @@
           el: '#app',
           delimiters: [ '[[', ']]' ],
           data: {
-              title: "hello world",
+              title: "HireCar.xyz",
               driver_licence: '',
               driver_age: '',
               visa: '',
               cred_insurance_decline: '',
-              car: ''
+              car: '',
+              supercdw: '',
+              supertp: ''
           }
       })
   </script>

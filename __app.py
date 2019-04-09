@@ -42,7 +42,7 @@ def contact():
     if request.method == 'POST':
         if form.validate() == False:
             flash('All fields are required.')
-            return render_template('index.html', form=form)
+            return render_template('static/hirecar.xyz_frontend/public/index.html', form=form)
         else:
             msg = Message(form.subject.data, sender='admin@sher.biz', recipients=['test@sher.biz'])
             msg.body = """ From: %s <%s> %s """ % (form.name.data, form.email.data, form.message.data)
