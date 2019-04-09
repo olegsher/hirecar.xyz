@@ -10,13 +10,13 @@
 <hr />
     <div class="section text-left">
       <h1>Vastama - агенство по аренде прокату автомобилей в Израиле</h1>
-  <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="Бронирование автомобиля в Израиле по лучшей онлайн цене" width="20" height="20" /> Бронирование автомобиля в Израиле по лучшей онлайн цене	(до 40% экономии при сравнении с заказом в отделении компании)
-  <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="Аренда авто без предоплаты" width="20" height="20" /> Аренда авто без предоплаты (оплата производится при возврате автомобиля и можно наличными)
-  <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="Бесплатная консультация и помощь" width="20" height="20" /> Бесплатная консультация и помощь по бронированию автомобиля в Израиле на русском языке
-  <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="Безлимитный километраж при заказе 3-29 дней" width="20" height="20" /> Безлимитный километраж при заказе 3-29 дней
-  <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="Отделения по аренде прокату автомобилей во всех крупных городах Израиля" width="20" height="20" /> Отделения по аренде прокату автомобилей во всех крупных городах Израиля
-  <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="Огромные скидки при бронировании автомобиля на 30+ дней" width="20" height="20" /> Огромные скидки при бронировании автомобиля на 30+ дней
-  <br><img style="float:left" class="img-responsive" src="{{url_for('static', filename='img/checkmark.png')}}" alt="WhatsApp/Viber +972-58-771-0101" width="20" height="20" /> Напишите нам на <a style="font-family: Times, serif; color:red">WhatsApp/Viber +972-58-771-0101</a> и наш менеджер вернется к вам с лучшим предложением
+  <br><img style="float:left" class="img-responsive" src="../static/img/checkmark.png" alt="Бронирование автомобиля в Израиле по лучшей онлайн цене" width="20" height="20" /> Бронирование автомобиля в Израиле по лучшей онлайн цене	(до 40% экономии при сравнении с заказом в отделении компании)
+  <br><img style="float:left" class="img-responsive" src="../static/img/checkmark.png" alt="Аренда авто без предоплаты" width="20" height="20" /> Аренда авто без предоплаты (оплата производится при возврате автомобиля и можно наличными)
+  <br><img style="float:left" class="img-responsive" src="../static/img/checkmark.png" alt="Бесплатная консультация и помощь" width="20" height="20" /> Бесплатная консультация и помощь по бронированию автомобиля в Израиле на русском языке
+  <br><img style="float:left" class="img-responsive" src="../static/img/checkmark.png" alt="Безлимитный километраж при заказе 3-29 дней" width="20" height="20" /> Безлимитный километраж при заказе 3-29 дней
+  <br><img style="float:left" class="img-responsive" src="../static/img/checkmark.png" alt="Отделения по аренде прокату автомобилей во всех крупных городах Израиля" width="20" height="20" /> Отделения по аренде прокату автомобилей во всех крупных городах Израиля
+  <br><img style="float:left" class="img-responsive" src="../static/img/checkmark.png" alt="Огромные скидки при бронировании автомобиля на 30+ дней" width="20" height="20" /> Огромные скидки при бронировании автомобиля на 30+ дней
+  <br><img style="float:left" class="img-responsive" src="../static/img/checkmark.png" alt="WhatsApp/Viber +972-58-771-0101" width="20" height="20" /> Напишите нам на <a style="font-family: Times, serif; color:red">WhatsApp/Viber +972-58-771-0101</a> и наш менеджер вернется к вам с лучшим предложением
 	</div>
 <hr />
 Возраст водителя (если водителей несколько то возраст самого младшего):
@@ -74,10 +74,10 @@
                     <div class="card-body">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li class="text-left">Категория: {{ pl[k].get("Car Group")  }}  | Сидений: {{ pl[k].get("Seats")  }} </li>
-                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)"> Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)</li>
-                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Обязательные страховки НЕ включены в цену(покрытие кредитной картой)"> Обязательные страховки НЕ включены в цену(покрытие кредитной картой)</li>
-                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Безлимитный километраж при заказе 3-29 дней<"> Безлимитный километраж при заказе 3-29 дней</li>
-                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="При заказе 30+ дней от {{ pl[k].get("Month (30+)Low")  }} "> При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
+                            <li class="text-left"><img src="../static/img/star.png" alt="Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)"> Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)</li>
+                            <li class="text-left"><img src="../static/img/star.png" alt="Обязательные страховки НЕ включены в цену(покрытие кредитной картой)"> Обязательные страховки НЕ включены в цену(покрытие кредитной картой)</li>
+                            <li class="text-left"><img src="../static/img/star.png" alt="Безлимитный километраж при заказе 3-29 дней<"> Безлимитный километраж при заказе 3-29 дней</li>
+                            <li class="text-left"><img src="../static/img/star.png" alt="При заказе 30+ дней от {{ pl[k].get("Month (30+)Low")  }} "> При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
                             <li><img class="img-fluid" src="https://www.hirecar.xyz/static/img/CarCategories/{{pl[k].get("Car Group")}}.jpg" alt="аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле" /> </li>
                             <li><!-- <br>
                                 <img style="float:left" class="img-responsive" src="http://www.hirecar.xyz/static/img/{{ range(4, 6) | random }}.png" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }} или подобный в Израиле"  />
@@ -97,10 +97,10 @@
                     <div class="card-body">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li class="text-left">Категория: {{ pl[k].get("Car Group")  }}  | Сидений: {{ pl[k].get("Seats")  }} </li>
-                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)"> Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)</li>
-                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Обязательные страховки уже включены в цену"> Обязательные страховки уже включены в цену</li>
-                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="Безлимитный километраж при заказе 3-29 дней"> Безлимитный километраж при заказе 3-29 дней</li>
-                            <li class="text-left"><img src="{{url_for('static', filename='img/star.png')}}" alt="При заказе 30+ дней от {{ pl[k].get("Month (30+)Low")  }} "> При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
+                            <li class="text-left"><img src="../static/img/star.png" alt="Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)"> Увеличенный километраж при заказе 1-2 дней(250км в день уже включены в цену)</li>
+                            <li class="text-left"><img src="../static/img/star.png" alt="Обязательные страховки уже включены в цену"> Обязательные страховки уже включены в цену</li>
+                            <li class="text-left"><img src="../static/img/star.png" alt="Безлимитный километраж при заказе 3-29 дней"> Безлимитный километраж при заказе 3-29 дней</li>
+                            <li class="text-left"><img src="../static/img/star.png" alt="При заказе 30+ дней от {{ pl[k].get("Month (30+)Low")  }} "> При заказе 30+ дней от <span class="badge badge-danger">{{ pl[k].get("Month (30+)Low")  }} </span>USD в месяц(в цену включены обязательные страховки и 150км\день)</li>
                             <li><img class="img-fluid" src="https://www.hirecar.xyz/static/img/CarCategories/{{pl[k].get("Car Group")}}.jpg" alt="аренда авто {{ pl[k].get("Vehicle Type")  }}  или подобный в Израиле" /> </li>
                             <li><!--<br>
                                 <img style="float:left" class="img-responsive" src="http://www.hirecar.xyz/static/img/{{ range(4, 6) | random }}.png" alt="Рэйтинг. Аренда авто {{ pl[k].get("Vehicle Type")  }} или подобный в Израиле"  />
