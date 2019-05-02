@@ -465,7 +465,7 @@
     </p>
 </div>
     <script src="dist/js/main.min.js"></script>
-        <!-- BEGIN JIVOSITE CODE {literal} -->
+        <!-- BEGIN JIVOSITE CODE {literal}
         <script type='text/javascript'>
           (function(){ var widget_id = 'bjmMQWuckM';var d=document;var w=window;function l(){
             var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
@@ -474,8 +474,22 @@
             if(d.readyState=='complete'){l();}else{if(w.attachEvent){w.attachEvent('onload',l);}
             else{w.addEventListener('load',l,false);}}})();
         </script>
-        <!-- {/literal} END JIVOSITE CODE -->
+        {/literal} END JIVOSITE CODE -->
     </div>
-
+    <!-- WhatsHelp.io widget -->
+    <script type="text/javascript">
+      (function () {
+        var options = {
+          whatsapp: "+972587710101", // WhatsApp number
+          call_to_action: "Message us", // Call to action
+          position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      })();
+    </script>
+    <!-- /WhatsHelp.io widget -->
 </body>
 </html>
